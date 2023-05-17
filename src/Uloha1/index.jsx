@@ -9,6 +9,11 @@ import './zarovka.css'
 export const Uloha1 = () => {
 	const [jeZapnuta, setJeZapnuta] = useState(false)
 
+	const zmen = () => {
+    setJeZapnuta(!jeZapnuta);
+
+	};
+
 	return (
 		<div className="zarovka">
 			<img
@@ -19,10 +24,11 @@ export const Uloha1 = () => {
 				className="zarovka__ikona"
 			/>
 			<div className="zarovka__tlacitka">
-				<button className="zarovka__tlacitko" disabled={jeZapnuta}>
+				<button onClick ={zmen}className="zarovka__tlacitko" disabled={jeZapnuta}>
 					zapnout
 				</button>
-				<button className="zarovka__tlacitko" disabled={!jeZapnuta}>
+				<button onClick ={zmen}
+				className="zarovka__tlacitko" disabled={!jeZapnuta}>
 					vypnout
 				</button>
 			</div>
